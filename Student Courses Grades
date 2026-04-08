@@ -1,3 +1,5 @@
+/* Student courses and grades for all grade levels since 2014. */
+
 Select 
 Course.EntityID,
 Course.CurriculumID,
@@ -35,8 +37,6 @@ Full Join Student.Scheduling.MeetSummary MeetSummary on Meet.MeetID = MeetSummar
 Full Join Student.Scheduling.StaffMeet StaffMeet on Meet.MeetID = StaffMeet.MeetID
 
 Join Student.Grading.StudentGradeBucket SGB ON StudentSection.StudentSectionID = SGB.StudentSectionID 
-
-Join Student.Grading.StudentGPABucket GPA ON SGB.StudentGradeBucketID = GPA.StudentGradeBucketID
 
 --Lookup/Reference Tables
 
