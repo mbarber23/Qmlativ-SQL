@@ -1,3 +1,6 @@
+/*This query returns all enrollments for all students of all time. It returns a 1 if the enrollment is active. */
+
+
 Select 
 EW.StudentID,
 EW.EntityID,
