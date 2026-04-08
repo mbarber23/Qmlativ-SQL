@@ -1,3 +1,7 @@
+/* This query returns all students of all time with their most recent food service category, i.e. Free/Reduced Status. 
+The F/R status is cleaned in Power BI */
+
+
 WITH LatestCustomerCategory AS (
     SELECT 
         CustomerID,
