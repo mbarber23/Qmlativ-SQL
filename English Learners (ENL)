@@ -1,0 +1,16 @@
+WITH maxdate AS (
+    SELECT
+        StudentID,
+        MAX(StartDate) AS MaxStartDate
+    FROM Student.SpecialPrograms.EnglishLearnerIN
+    GROUP BY StudentID
+)
+SELECT 
+    ENL.StudentID,
+    ENL.StartDate,
+    ENL.EndDate,
+    ENL.WIDAProficiencyLevel,
+    ENL.StateInstructionalLanguageProgramINID
+FROM Student.SpecialPrograms.EnglishLearnerIN ENL
+JOIN maxdate ON ENL.StudentID = maxdate.StudentID AND ENL.StartDate = maxdate.MaxStartDate;
+
