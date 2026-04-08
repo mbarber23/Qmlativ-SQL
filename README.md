@@ -1,0 +1,1 @@
+Hello! This repo stores sql query files of Hamilton Southeastern Schools' Student Information System. The SIS is Skyward Qmlativ; queries are written in Microsoft SMSS and copied into PowerBI desktop.
