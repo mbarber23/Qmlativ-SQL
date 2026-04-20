@@ -1,5 +1,3 @@
-/* Student courses and grades for all grade levels since 2014. */
-
 Select 
 Course.EntityID,
 Course.CurriculumID,
@@ -14,10 +12,7 @@ MeetSummary.Period,
 Staff.FullNameFL,
 StudentSection.StudentID,
 StudentIN.StudentTestNumber,
-GM.Code,
-GPA.GPACredits,
-GPA.GPAPoints,
-GPA.BonusGPAPoints
+GM.Code
 
 from 
 
@@ -36,7 +31,7 @@ Full Join Student.Scheduling.MeetSummary MeetSummary on Meet.MeetID = MeetSummar
 
 Full Join Student.Scheduling.StaffMeet StaffMeet on Meet.MeetID = StaffMeet.MeetID
 
-Join Student.Grading.StudentGradeBucket SGB ON StudentSection.StudentSectionID = SGB.StudentSectionID 
+FULL Join Student.Grading.StudentGradeBucket SGB ON StudentSection.StudentSectionID = SGB.StudentSectionID 
 
 --Lookup/Reference Tables
 
@@ -48,7 +43,7 @@ Full Join Student.Staff.Department Department on Course.DepartmentID = Departmen
 
 Full Join Student.District.SchoolYear SchoolYear on StudentSection.SchoolYearIDCourse = SchoolYear.SchoolYearID
 
-Join Student.Grading.GradeMark GM ON SGB.GradeMarkID = GM.GradeMarkID
+FULL Join Student.Grading.GradeMark GM ON SGB.GradeMarkID = GM.GradeMarkID
 
 WHERE (Meet.IsPrimary =1 Or MeetSummary.Period is null)
 And (StaffMeet.IsPrimary = 1 OR Staff.FullNameFL is null)
