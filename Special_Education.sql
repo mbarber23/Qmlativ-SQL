@@ -18,4 +18,3 @@ Join Student.SpecialEducation.DisabilityServiceProgramIN SPEDProgram
     ON SPEDDisability.DisabilityServiceProgramINID = SPEDProgram.DisabilityServiceProgramINID
 
 Where SpedIN.EndDate is null
-And SPEDIN.StudentID = 376607
